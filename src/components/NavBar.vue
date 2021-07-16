@@ -8,19 +8,16 @@
             <router-link to="/"><a class="nav-link" href="#">Home</a></router-link>
           </li>
           <li class="nav-item">
-            <router-link to="About"><a class="nav-link">About</a></router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="Weekends"><a class="nav-link">Weekends</a></router-link>
-          </li>
-          <li class="nav-item">
-             <router-link to="Menu"><a class="nav-link">Menu</a></router-link>
+            <router-link to="Subscribers"><a class="nav-link">Subscribers</a></router-link>
           </li>
           <li class="nav-item">
             <router-link to="Orders"><a class="nav-link">Orders</a></router-link>
           </li>
-           <li class="nav-item">
-            <router-link to="Cocktails"><a class="nav-link">Cocktail order</a></router-link>
+          <li class="nav-item">
+            <router-link to="Message"><a class="nav-link">Message US</a></router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="Registration"><a class="nav-link">Registration </a></router-link>
           </li>
         </ul>
         

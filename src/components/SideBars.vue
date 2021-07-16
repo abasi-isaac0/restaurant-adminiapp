@@ -6,43 +6,39 @@
             
        
         </div>
-        <div class="grid1">
+        <!-- <div class="grid1">
             <router-link to="/investment/dashboard" class="dropdown-item rout link" >
             <img src="/img/logo/chart.png" alt="" srcset="" class="icon">
-            <span class="two"> Dashboard</span></router-link>
-        </div>
+            <span class="two">My Dashboard</span></router-link>
+        </div> -->
          <div class="grid1">
-            <router-link to="/investment/profile" class="dropdown-item rout link" >
+            <router-link to="/orders" class="dropdown-item rout link" >
             <img src="/img/logo/chart.png" alt="" srcset="" class="icon">
-            <span class="two">  Profile</span></router-link>
+            <span class="two">Orders</span></router-link>
         </div>
          <div class="grid1">
-            <router-link to="/investment/investment" class="dropdown-item rout link" >
+            <router-link to="/Subscribers" class="dropdown-item rout link" >
             <img src="/img/logo/book.png" alt="" srcset="" class="icon">
-            <span class="two">My Investments</span></router-link>
+            <span class="two">Subscribers</span></router-link>
         </div>
         <div class="grid1">
-            <nuxt-link to="/investment/withdrawal" class="dropdown-item link rout" >
+            <router-link to="/Registration" class="dropdown-item link rout" >
             <img src="/img/logo/case.png" alt="" srcset="" class="icon">
-            <span class="two">Withdrawals</span></nuxt-link>
+            <span class="two">Registration</span></router-link>
         </div>
         <div class="grid1">
-            <router-link to="/investment/downlines" class="dropdown-item rout link" >
+            <router-link to="/Message" class="dropdown-item rout link" >
             <img src="/img/logo/card.png" alt="" srcset="" class="icon">
-            <span class="two"> Downlines</span></router-link>
+            <span class="two">Message Us</span></router-link>
         </div>
-        <div class="grid1">
-            <router-link to="/investment/support" class="dropdown-item rout link" >
-            <img src="/img/logo/settings.png" alt="" srcset="" class="icon">
-            <span class="two"> Support</span></router-link>
-        </div>
-        <div class="grid1" @click="logOut">
+        
+        <!-- <div class="grid1" @click="logOut">
             <div class="dropdown-item rout link">
                 <img src="/img/icon/logout.svg" alt="" srcset="" class="icon">
             <span class="two"> Log Out</span>
             </div>
             
-        </div>
+        </div> -->
         <!-- <div class="grid1">
             <router-link to="/addstudent" class="dropdown-item link" >
             <font-awesome-icon class="icon" :icon="['fas', 'headset']" />

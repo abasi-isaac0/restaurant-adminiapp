@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
+      <router-link to="/Message">Message</router-link> |
       <router-link to="/orders">Orders</router-link> |
-      <router-link to="/weekends">Weekends</router-link> -->
+      <router-link to="/Subscrbers">Subscribers</router-link> -->
       <navbar/>
     </div>
     <router-view/>
@@ -45,4 +45,9 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+
+/* @media screen(567) {
+   
+} */
 </style>

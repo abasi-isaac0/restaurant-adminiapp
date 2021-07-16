@@ -10,14 +10,7 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
+ 
   {
     path: '/orders',
     name: 'Orders',
@@ -27,20 +20,28 @@ const routes = [
     component: () => import(/* webpackChunkName: "order" */ '../views/orders.vue')
   },
   {
-    path: '/weekends',
-    name: 'Weekends',
+  path: '/Message',
+    name: 'Message',
     // route level code-splitting
-    // this generates a separate chunk (weekends.[hash].js) for this route
+    // this generates a separate chunk (Message.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "weekends" */ '../views/Weekends.vue')
+    component: () => import(/* webpackChunkName: "Message" */ '../views/Message.vue')
   },
   {
-    path: '/Cocktails',
-    name: 'Cocktails',
+    path: '/Subscribers',
+    name: 'Subscribers',
     // route level code-splitting
-    // this generates a separate chunk (weekends.[hash].js) for this route
+    // this generates a separate chunk (Subscribers.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "cocktail" */ '../views/Cocktails.vue')
+    component: () => import(/* webpackChunkName: "Subscribers" */ '../views/Subscribers.vue')
+  },
+  {
+    path: '/Registration',
+    name: 'Registration',
+    // route level code-splitting
+    // this generates a separate chunk (Subscribers.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "cocktail" */ '../views/Registration.vue')
   }
   
   

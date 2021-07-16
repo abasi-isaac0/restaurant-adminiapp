@@ -6,105 +6,40 @@
         
         <div class="sign1">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="box-form">
-                            <div class="form-border">
-                                <form @submit.prevent="orderBole">
-                                        <label for="">Bole</label>
-                                        <input type="text" v-model="Bole.food">
-                                        <label for="">Description</label>
-                                        <input type="text" v-model="Bole.description">
-                                        <label for="">Price</label>
-                                        <input type="text" v-model="Bole.price">
-                                        <button type="submit" class="submit mt-4 ml-3 p-2">Submit</button>
-                                </form>
-                    
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-form">
-                            <div class="form-border">
-                                <form @submit.prevent="orderCornportage">
-                                        <label for="">Corn portage</label>
-                                        <input type="text" v-model="Cornportage.food">
-                                        <label for="">Description</label>
-                                        <input type="text" v-model="Cornportage.description">
-                                        <label for="">Price</label>
-                                        <input type="text" v-model="Cornportage.price">
-                                        <button type="submit" class="submit mt-4 ml-3 p-2">Submit</button>
-                                </form>
-                    
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-form">
-                            <div class="form-border">
-                                <form @submit.prevent="orderRice">
-                                        <label for="">Chinese Rice</label>
-                                        <input type="text" v-model="Rice.food">
-                                        <label for="">Description</label>
-                                        <input type="text" v-model="Rice.description">
-                                        <label for="">Price</label>
-                                        <input type="text" v-model="Rice.price">
-                                        <button type="submit" class="submit mt-4 ml-3 p-2">Submit</button>
-                                </form>
-                    
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-form">
-                            <div class="form-border">
-                                <form @submit.prevent="orderSoap">
-                                        <label for="">Fisher man Soap</label>
-                                        <input type="text" v-model="Soap.food">
-                                        <label for="">Description</label>
-                                        <input type="text" v-model="Soap.description">
-                                        <label for="">Price</label>
-                                        <input type="text" v-model="Soap.price">
-                                        <button type="submit" class="submit mt-4 ml-3 p-2">Submit</button>
-                                </form>
-                    
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-form">
-                            <div class="form-border">
-                                <form @submit.prevent="orderGrilledfish">
-                                        <label for="">Grilled fish</label>
-                                        <input type="text" v-model="Grilledfish.food">
-                                        <label for="">Description</label>
-                                        <input type="text" v-model="Grilledfish.description">
-                                        <label for="">Price</label>
-                                        <input type="text" v-model="Grilledfish.price">
-                                        <button type="submit" class="submit mt-4 ml-3 p-2">Submit</button>
-                                </form>
-                    
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-form">
-                            <div class="form-border">
-                                <form @submit.prevent="orderFishsoup">
-                                        <label for="">Fisher man</label>
-                                        <input type="text" v-model="Fishsoup.food">
-                                        <label for="">Description</label>
-                                        <input type="text" v-model="Fishsoup.description">
-                                        <label for="">Price</label>
-                                        <input type="text" v-model="Fishsoup.price">
-                                        <button type="submit" class="submit mt-4 ml-3 p-2">Submit</button>
-                                </form>
-                    
-                            </div>  
-                        </div>
-                    </div>
-                    
+                <div class="title">
+                    <h2><b>ORDERS</b></h2>
                 </div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Foods</th>
+                        <th scope="col">Drinks</th>
+                        <th scope="col">Quantity food</th>
+                        <th scope="col">Quantity drink</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(n, id) in orders" :key="id">
+                        <td>{{n. name}}</td>
+                        <td>{{n. phone_number}}</td>
+                        <td>{{n.foods}}</td>
+                        <td>{{n.drinks}}</td>
+                        <td>{{n.quantity_food}}</td>
+                        <td>{{n.quantity_drink}}</td>
+                        <td>{{n.date}}</td>
+                        <td>{{n.time}}</td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                    </table>
+
+                    
             </div>
         </div>
         
@@ -128,128 +63,42 @@ export default {
     },
      data() {
         return {
-            meal:{
-                food:'',
-                description: '',
-                price: ''
-            },
-            // drinks:{
-            //     drink:'',
-            //     description:'',
-            //     price:''
-            // }
-            Bole:{
-                food:'',
-                description: '',
-                price: ''
-            },
-            Cornportage:{
-                food:'',
-                description: '',
-                price: ''
-            },
-            Rice:{
-                food:'',
-                description: '',
-                price: ''
-            },
-            Soap:{
-                food:'',
-                description: '',
-                price: ''
-            },
-            Grilledfish:{
-                food:'',
-                description: '',
-                price: ''
-            },
-            Fishsoup:{
-                food:'',
-                description: '',
-                price: ''
-            },
-
-
-
+           orders:{
+            name:'',
+            phone_number:'',
+            foods:'',
+            drinks:'',
+            quantity_food:'',
+            quantity_drink:'',
+            date:'',
+            time:'',
+           }
         };
     },
     computed: {
         
     },
+    mounted(){
+        this.orderNow()
+    },
     methods: {
-        orderBole(){
-        axios.post('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderbole.json',this.meal,{
+        orderNow(){
+        axios.get('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderNow.json',{
           headers:{
             'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': '*',
           }
         }).then((res)=>{
-          console.log(res)
-          this.meal={}
+            this.orders = res.data
+          console.log(this.orders)
+          
+          
         })
       },
-      orderCornportage(){
-        axios.post('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderCornportage.json',this.meal,{
-          headers:{
-            'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
-          }
-        }).then((res)=>{
-          console.log(res)
-          this.meal={}
-        })
-      },
-      orderRice(){
-        axios.post('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderRice.json',this.meal,{
-          headers:{
-            'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
-          }
-        }).then((res)=>{
-          console.log(res)
-          this.meal={}
-        })
-      },
-      orderSoap(){
-        axios.post('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderSoap.json',this.meal,{
-          headers:{
-            'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
-          }
-        }).then((res)=>{
-          console.log(res)
-          this.meal={}
-        })
-      },
-      orderGrilledfish(){
-        axios.post('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderGrilledfish.json',this.meal,{
-          headers:{
-            'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
-          }
-        }).then((res)=>{
-          console.log(res)
-          this.meal={}
-        })
-      },
-      orderFishsoup(){
-        axios.post('https://hotel-project-cafb0-default-rtdb.firebaseio.com/orderFishsoup.json',this.meal,{
-          headers:{
-            'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
-          }
-        }).then((res)=>{
-          console.log(res)
-          this.meal={}
-        })
-      },
-      
-        
-        
     },
-    mounted() {
-        
-    },
+    
+    
+    
 };
 </script>
 <style scoped>
@@ -315,85 +164,10 @@ export default {
         height: 50px;
         margin-top: 4rem;
     }
-    th{
-        background-color: #0272A2;
-        color: white;
-        
-        border: none;
-    }
-    /* .borderleft{
-        border-bottom-left-radius: 10px  !important;
-        border-top-left-radius: 10px  !important;
-    }
-    .borderright{
-        border-bottom-right-radius: 10px  !important;
-        border-top-right-radius: 10px  !important;
-    } */
-    .box-form{
-        padding-top: 100px;
-        margin-left: 5px;
-    }
-    .form-border{
-      width: 20vw;
-      height: 50vh;
-      background-color: white;
-      box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
-        ;
-
-  
-  
-        /* min-height: 200px; */
-        /* width: 50vw; */
-        /* margin: 100px auto; */
-        background: white;
-        border-radius: 5px;
-
-    }
-    label{
-        display: block;
-        margin-left: 15px;
-        margin-top: 3px;
-        padding:5px;
-    }
-    form{
-        padding-top: 50px;
-        margin-left:20px;
-    }
-    input{
-        margin-left:15px;
-        padding: 5px;
-        border-radius: 5px;
-    }
-    button{
-        color: rgb(78, 185, 228);
-        display: block;
-        color:white;
-        display: block;
-        border: none;
-        /* border-radius: px; */
-        padding: 12px 24px;
+    .title{
         text-align: center;
-        text-decoration: none;
-        background-color: #008CBA;
-        /* display: inline-block; */
-        font-size: 16px;
-        font-weight: 600;
     }
-    tr{ 
-        background: white;
-        margin-top: 5px;
-        color: #0272A2;
-    }
-    table {
-  border-collapse:separate; 
-  border-spacing: 0 0.5em;
-}
+    
 
 @media(max-width:576px){
     .upgrade{
