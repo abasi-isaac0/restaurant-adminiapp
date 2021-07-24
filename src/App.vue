@@ -5,7 +5,7 @@
       <router-link to="/Message">Message</router-link> |
       <router-link to="/orders">Orders</router-link> |
       <router-link to="/Subscrbers">Subscribers</router-link> -->
-      <navbar/>
+      <!-- <navbar/> -->
     </div>
     <router-view/>
   </div>

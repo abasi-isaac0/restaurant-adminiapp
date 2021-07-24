@@ -25,3 +25,18 @@
 </nav>
     </div>
 </template>
+
+<style scoped>
+  @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+  .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase
+}
+
+
+
+@media(max-width:567px){
+  
+}
+
+</style>

@@ -1,6 +1,7 @@
 <template>
     <div>
         <div>
+            <navbar/>
             <sidebar/>
         </div>
         
@@ -14,13 +15,13 @@
                         <tr>
                         
                         <th scope="col">Emails</th>
+                        <th>Created At</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(e, id) in emails" :key="id">
-                    
+                        <tr v-for="(e, id) in emails" :key="id">                    
                         <td>{{e.email}}</td>
-                        
+                        <td> {{e.created_at | date}} </td>
                         </tr>
                         
                     </tbody>
@@ -46,7 +47,13 @@ export default {
     auth: false,
     // layout: "blog",
     components: {
-        sidebar
+        sidebar,
+        navbar
+    },
+    filters:{
+        date(value){
+            return value;
+        }
     },
      data() {
         return {

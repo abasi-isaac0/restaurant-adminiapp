@@ -1,18 +1,18 @@
 <template>
   <div>
-   <div class="container">
+   <div class="">
       <div class="grid">
         <div class="grid1">
 
         </div>
         <div class="grid2">
          
-          <div class="container"> 
+          <div class="container-fluid"> 
              <div class="title">
                <h2>Login</h2>
              </div>
               <form @submit.prevent="login">
-                <div class="container">
+                <div class="">
                   <!-- <label for=""><b>Username</b></label>
                   <input type="text" placeholder="Enter Username"  required>
                     -->
@@ -104,41 +104,46 @@ export default {
   border-radius: 0px 20px 10pc 0;
 }
 .title{
-  padding-top: 10px;
+  padding-top: 10rem;
   padding-bottom: 20px ;
   text-align: left;
-  color: ;
-  margin-left: 10px;
+  margin-left: 10rem;
 }
 label{
 display: block;
+margin-left: 10rem;
 }
-.submit button{
+button{
   font-weight: bold;
-  width: 24%;
+  width: 40%;
+  display: block;
+  margin-left: 10rem;
 }
 input{  
+  margin-left: 10rem;
   margin-bottom: 1rem;
   border: none;
+  width: 40%;
   border-bottom: 2px solid black ;
   background-color: none;
+  display: block;
   } 
 select{
   margin-bottom: 1rem;
   }
-button{
-  padding-left: 20px;
-  padding-right: 20px;
-  }
+
   form{
     justify-content: center;
   }
 
 @media(max-width:567px){
+  
         .grid{
         display: grid;
         grid-template-columns: 1fr;
         padding: 0;
+        margin-top: -4rem;
+        height: 80vh;
     }
          .grid1{
         display: none;
@@ -148,9 +153,10 @@ button{
       color: gold;
     }
     .grid2{
-       border-radius: 15px 0px 15px 0;
-        height: 40vh;
-        background-color: white;
+       border-radius: none;
+      
+        background: url('../assets/images/15.jpg') center center/cover;
+        height: 50vh;
         /* color: gold; */
         /* margin-top: auto; */
         /* background: linear-gradient(to right, rgba(8,29,41,0.7),rgba(8,29,41,0.7)),url('../assets/images/16.jpg') center center/cover; */
@@ -169,6 +175,31 @@ button{
     .main{
       background-color: none;
     }
+    .title{
+  padding-top: 1rem;
+  padding-bottom: 20px ;
+  text-align: left;
+  margin-left: 0;
+}
+label{
+display: block;
+margin-left: 0;
+}
+button{
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  margin-left: 0;
+}
+input{  
+  margin-left: 0;
+  margin-bottom: 1rem;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid black ;
+  background-color: none;
+  display: block;
+  } 
     }
 
 
@@ -176,7 +207,61 @@ button{
         .grid2{
             padding: 2rem 20px;
         }
+        .title{
+  padding-top: 5rem;
+  padding-bottom: 20px ;
+  text-align: left;
+  margin-left: 0;
+}
+label{
+display: block;
+margin-left: 0;
+}
+button{
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  margin-left: 0;
+}
+input{  
+  margin-left: 0;
+  margin-bottom: 1rem;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid black ;
+  background-color: none;
+  display: block;
+  } 
       
     }
+
+
+@media(min-width:769px) and (max-width:1200px){
+  .title{
+  padding-top: 5rem;
+  padding-bottom: 20px ;
+  text-align: left;
+  margin-left: 0;
+}
+label{
+display: block;
+margin-left: 0;
+}
+button{
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  margin-left: 0;
+}
+input{  
+  margin-left: 0;
+  margin-bottom: 1rem;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid black ;
+  background-color: none;
+  display: block;
+  } 
+}
 
 </style>

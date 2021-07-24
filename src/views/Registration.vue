@@ -2,6 +2,7 @@
     <div>
         <div>
             <sidebar/>
+            <navbar/>
         </div>
         
         <div class="sign1">
@@ -17,6 +18,7 @@
                         <th scope="col">Last Name</th>
                         <th scope="col">Play</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Reference Number</th>
                         
                         </tr>
                     </thead>
@@ -26,6 +28,7 @@
                         <td>{{r.lastName}}</td>
                         <td>{{r.play}}</td>
                         <td>{{r.email}}</td>
+                        <td>KT - GH678</td>
                         
                         </tr>
                         
@@ -52,7 +55,8 @@ export default {
     auth: false,
     // layout: "blog",
     components: {
-        sidebar
+        sidebar,
+        navbar
     },
      data() {
         return {
@@ -61,6 +65,7 @@ export default {
             lastName: '',
             play:'',
             email: '',
+
        }      
      };
     },

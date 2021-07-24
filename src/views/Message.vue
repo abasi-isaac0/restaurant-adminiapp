@@ -2,6 +2,7 @@
     <div>
         <div>
             <sidebar/>
+             <navbar/>
         </div>
         
         <div class="sign1">
@@ -16,6 +17,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Message</th>
+                        <th>Created At</th>
                         
                         </tr>
                     </thead>
@@ -25,6 +27,7 @@
                         <td>{{m.email}}</td>
                         <td>{{m. phone_number}}</td>                        
                         <td>{{m.message}}</td>
+                        <td>{{m.created_at | date}}</td>
                         
                         </tr>
                         
@@ -52,7 +55,8 @@ export default {
     auth: false,
     // layout: "blog",
     components: {
-        sidebar
+        sidebar,
+        navbar
     },
      data() {
         return {
@@ -63,6 +67,11 @@ export default {
          message:'',
         }
         };
+    },
+    filters: {
+        date(value){
+            return value;
+        }
     },
     computed: {
         

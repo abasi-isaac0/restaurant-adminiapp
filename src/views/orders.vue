@@ -2,6 +2,7 @@
     <div>
         <div>
             <sidebar/>
+             <navbar/>
         </div>
         
         <div class="sign1">
@@ -9,8 +10,9 @@
                 <div class="title">
                     <h2><b>ORDERS</b></h2>
                 </div>
-                <table class="table">
-                    <thead class="thead-dark">
+                <div class="table-responsive">
+                    <table class="table">
+                         <thead class="thead-dark">
                         <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Phone Number</th>
@@ -38,6 +40,9 @@
                         
                     </tbody>
                     </table>
+              </div>
+               
+                
 
                     
             </div>
@@ -59,7 +64,8 @@ export default {
     auth: false,
     // layout: "blog",
     components: {
-        sidebar
+        sidebar,
+        navbar
     },
      data() {
         return {
