@@ -18,7 +18,7 @@
                         <th scope="col">Phone Number</th>
                         <th scope="col">Message</th>
                         <th>Created At</th>
-                        
+                        <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +28,9 @@
                         <td>{{m. phone_number}}</td>                        
                         <td>{{m.message}}</td>
                         <td>{{m.created_at | date}}</td>
-                        
+                        <td>
+                            <button class="btn btn-sm btn-danger" @click="deleteUser(id)">Delete</button>
+                        </td>
                         </tr>
                         
                         
@@ -81,20 +83,35 @@ export default {
     },
     methods: {
         contactUs(){
-        axios.get('https://hotel-project-cafb0-default-rtdb.firebaseio.com/contact.json',{
-          headers:{
-            'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*',
-          }
-        }).then((res)=>{
-            this.contact = res.data
-          console.log(this.contact)
-          
-          
-        })
-      },
-    },
-    
+            axios.get('https://hotel-project-cafb0-default-rtdb.firebaseio.com/contact.json',{
+                headers:{
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': '*',
+                }
+            }).then((res)=>{
+                this.contact = res.data
+                console.log(this.contact)
+            })
+      
+       },
+        deleteUser(id){
+            if(confirm('Are you sure you want to delete user')){
+                axios.delete(`https://hotel-project-cafb0-default-rtdb.firebaseio.com/contact/${id}.json`,{
+                  headers:{
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': '*',
+                  }
+                }).then((res)=>{
+                this.contactUs();
+                console.log(res.data)
+                alert('Deleted Successfully')
+                })
+            }
+
+            }
+
+        },
+        
     
     
 };

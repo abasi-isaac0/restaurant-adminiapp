@@ -6,12 +6,12 @@
             
        
         </div>
-        <!-- <div class="grid1">
-            <router-link to="/investment/dashboard" class="dropdown-item rout link" >
+         <div class="grid1">
+            <!-- <router-link to="/investment/dashboard" class="dropdown-item rout link" > -->
             <img src="/img/logo/chart.png" alt="" srcset="" class="icon">
             <span class="two">My Dashboard</span></router-link>
-        </div> -->
-         <div class="grid1">
+        </div> 
+        <div class="grid1">
             <router-link to="/orders" class="dropdown-item rout link" >
             <img src="/img/logo/chart.png" alt="" srcset="" class="icon">
             <span class="two">Orders</span></router-link>

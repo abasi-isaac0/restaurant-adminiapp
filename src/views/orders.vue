@@ -23,10 +23,13 @@
                         <th scope="col">Date</th>
                         <th scope="col">Time</th>
                         
+                        
+
+                        
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(n, id) in orders" :key="id">
+                        <tr v-for="(n, id) in order" :key="id">
                         <td>{{n. name}}</td>
                         <td>{{n. phone_number}}</td>
                         <td>{{n.foods}}</td>
@@ -35,6 +38,8 @@
                         <td>{{n.quantity_drink}}</td>
                         <td>{{n.date}}</td>
                         <td>{{n.time}}</td>
+                        <td>{{n.created_at | date}} </td>
+                        
                         </tr>
                         
                         
@@ -67,9 +72,14 @@ export default {
         sidebar,
         navbar
     },
+    filters:{
+        date(value){
+            return value;
+        }
+    },
      data() {
         return {
-           orders:{
+           order:{
             name:'',
             phone_number:'',
             foods:'',
@@ -95,13 +105,28 @@ export default {
     'Access-Control-Allow-Headers': '*',
           }
         }).then((res)=>{
-            this.orders = res.data
-          console.log(this.orders)
+            this.order = res.data
+          console.log(this.order)
           
           
         })
       },
     },
+    // deleteUser(id){
+    //   if(confirm('Are you sure you want to delete user')){
+    //     axios.delete(`https://hotel-project-cafb0-default-rtdb.firebaseio.com/orders/${id}.json`,{
+    //       headers:{
+    //         'Access-Control-Allow-Origin': '*',
+    //         'Access-Control-Allow-Headers': '*',
+    //       }
+    //     }).then((res)=>{
+    //       this.orderNow();
+    //       console.log(res.data)
+    //       alert('Deleted Successfully')
+    //     })
+    //   }
+
+    // }
     
     
     

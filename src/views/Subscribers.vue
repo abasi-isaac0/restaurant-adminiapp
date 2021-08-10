@@ -15,13 +15,17 @@
                         <tr>
                         
                         <th scope="col">Emails</th>
-                        <th>Created At</th>
+                        <th scope="col"> Created At</th>
+                        <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(e, id) in emails" :key="id">                    
+                        <tr v-for="(e, id) in subscribe" :key="id">                    
                         <td>{{e.email}}</td>
                         <td> {{e.created_at | date}} </td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" @click="deleteUser(id)">Delete</button>
+                        </td>
                         </tr>
                         
                     </tbody>
@@ -57,7 +61,9 @@ export default {
     },
      data() {
         return {
-           emails:{}
+           subscribe:{
+               emails:{}
+           }
         };
     },
     computed: {
@@ -68,18 +74,34 @@ export default {
     },
     methods: {
         addSub(){
-        axios.get('https://hotel-project-cafb0-default-rtdb.firebaseio.com/email.json',{
+        axios.get('https://hotel-project-cafb0-default-rtdb.firebaseio.com/subscribe.json',{
           headers:{
             'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': '*',
           }
         }).then((res)=>{
-            this.emails = res.data
-          console.log(this.emails)
+            this.subscribe = res.data
+          console.log(this.subscribe)
 
         })
         
+      },
+      deleteUser(id){
+      if(confirm('Are you sure you want to delete user')){
+        axios.delete(`https://hotel-project-cafb0-default-rtdb.firebaseio.com/subscribe/${id}.json`,{
+          headers:{
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+          }
+        }).then((res)=>{
+          this.addSub();
+          console.log(res.data)
+          alert('Deleted Successfully')
+        })
       }
+
+    }
+
     },
     
     

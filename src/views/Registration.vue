@@ -18,7 +18,8 @@
             <th scope="col">Last Name</th>
             <th scope="col">Play</th>
             <th scope="col">Email</th>
-            <th scope="col">Reference Number</th>
+            <!-- <th scope="col">Reference Number</th> -->
+            <th>Created At</th>
             <th>Delete</th>
 
           </tr>
@@ -27,9 +28,10 @@
           <tr v-for="(r, id) in register" :key="id">
             <td>{{r.firstName}}</td>
             <td>{{r.lastName}}</td>
-            <td>{{r.play}}</td>
+            <td>{{r.weekend_play}}</td>
             <td>{{r.email}}</td>
-            <td>KT-{{r.reference }}</td>
+            <!-- <td>KT-{{r.reference }}</td> -->
+            <td>{{r.created_at | date}}</td>
             <td>
               <button class="btn btn-sm btn-danger" @click="deleteUser(id)">Delete</button>
             </td>
@@ -61,12 +63,17 @@ export default {
     sidebar,
     navbar
   },
+  filters:{
+    date(value){
+        return value;
+    }
+  },
   data() {
     return {
       register:{
         firstName: '',
         lastName: '',
-        play:'',
+        weekend_play:'',
         email: '',
 
       }
@@ -179,6 +186,7 @@ export default {
 }
 .title{
   text-align: center;
+  padding:25px ;
 }
 
 
